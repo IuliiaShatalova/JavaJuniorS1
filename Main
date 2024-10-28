@@ -1,1 +1,18 @@
+package ru.shatalova;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalDouble;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(2, 4, 7, 10, 3, 11);
+
+        OptionalDouble average = list.stream()
+                .filter(num -> num % 2 == 0)
+                .mapToDouble(Integer::doubleValue)
+                .average();
+        System.out.println("Среднее значение четных чисел: " + average);
+    }
+}
